@@ -4,10 +4,10 @@ on:
   push:
     branches: 
       - master
-  watch:
-    types: started
+#   watch:
+#     types: started
   schedule:
-    - cron: 0 */8 * * *
+    - cron: '25 11 * * *'
 
 jobs:
   ClockIn:
@@ -23,7 +23,6 @@ jobs:
       - name: Install packages
         run: |
           pip3 install requests
-          # pip3 install ddddocr
       - name: Clock In
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
